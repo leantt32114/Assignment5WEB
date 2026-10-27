@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 2 · PC Configurator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task2.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav><a href="index.html">Home</a><a href="task1.html">Task 1</a><a href="task3.html">Task 3</a></nav>
+    <h1>PC Configurator</h1>
+    <p>Choose one part in every category. Incompatible parts are blocked, and the total must stay inside your budget.</p>
+  </header>
+  <main>
+    <section class="card">
+      <div class="row">
+        <div><label for="budget">Budget ($)</label><input id="budget" type="number" min="0" step="50" value="1500"></div>
+        <div><label for="search">Search parts</label><input id="search" type="search" placeholder="name or tag, e.g. gaming"></div>
+      </div>
+    </section>
+    <p id="note" class="msg" role="status"></p>
+    <div class="layout">
+      <section id="parts" class="grid" aria-label="Parts"></section>
+      <aside class="card">
+        <h2>Your build</h2>
+        <div id="build"></div>
+        <div class="btns"><button id="save" type="button">Save build</button></div>
+      </aside>
+    </div>
+    <section class="card">
+      <h2>Saved builds</h2>
+      <div id="saved"></div>
+    </section>
+  </main>
+</body>
+</html>

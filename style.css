@@ -1,0 +1,73 @@
+/* Shared styles for all three tasks. JavaScript only toggles classes; there are no inline styles. */
+:root{--paper:#e9eef5;--ink:#101820;--card:#fff;--muted:#4a5565;--accent:#ffd23f;--ok:#14804a;--okbg:#dff5e8;--bad:#c81d3a;--badbg:#fde4e8;--focus:#1d4ed8;--hero:#101820;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,sans-serif}
+header,main{max-width:1040px;margin:0 auto;padding:16px}
+h1,h2,h3,h4{font-family:Rockwell,"Roboto Slab",Georgia,serif;line-height:1.2}
+h1{font-size:1.9rem;margin:.4em 0}
+h2{font-size:1.3rem;margin:0 0 .6em}
+h3{font-size:1.1rem;margin:.3em 0}
+h4{font-size:1rem;margin:0}
+p{margin:.4em 0}
+nav a{color:var(--ink);margin-right:16px;font-weight:600}
+
+.card{background:var(--card);border:2px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 var(--ink);padding:16px;margin-bottom:20px}
+a.card{display:block;color:inherit;text-decoration:none}
+a.card:hover,a.card:focus-visible{background:var(--accent)}
+.card.win{background:var(--okbg)}
+.card.lose{background:var(--badbg)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.layout{display:grid;gap:20px;grid-template-columns:3fr 2fr;align-items:start}
+@media (max-width:760px){.layout{grid-template-columns:1fr}}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+button{font:inherit;font-weight:600;color:var(--ink);background:var(--accent);border:2px solid var(--ink);border-radius:6px;padding:7px 14px;cursor:pointer}
+button:hover:not(:disabled){background:#ffe27a}
+button:active:not(:disabled){transform:translate(2px,2px)}
+button.ghost{background:var(--card)}
+button.ghost:hover:not(:disabled){background:var(--paper)}
+button:disabled{background:#d5dae2;color:#6b7482;border-color:#6b7482;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;font:inherit;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:6px;padding:7px 9px}
+input:hover:not(:disabled),select:hover{background:#fffbe6}
+input:disabled{background:#d5dae2;color:#6b7482;border-color:#6b7482}
+[aria-invalid="true"]{border-color:var(--bad);background:var(--badbg)}
+
+.msg{min-height:1.55em}
+.muted{color:var(--muted)}
+.error{color:var(--bad);font-weight:600}
+.success{color:var(--ok);font-weight:600}
+.empty{color:var(--muted);font-style:italic;padding:12px;border:2px dashed var(--muted);border-radius:6px}
+
+/* Task 1 */
+#guess{font-size:1.5rem;letter-spacing:.35em;text-align:center;max-width:15rem}
+#history{padding-left:1.4rem}
+
+/* Task 2 */
+.part{display:flex;flex-direction:column;gap:6px;background:#fff;border:2px solid var(--ink);border-radius:6px;padding:12px}
+.part.selected{background:var(--okbg);border-color:var(--ok)}
+.part.soldout{background:#eceff3;color:var(--muted)}
+.part button{margin-top:auto}
+.cat{grid-column:1/-1;margin:10px 0 0;border-bottom:2px solid var(--ink)}
+.tag{display:inline-block;font-size:.8rem;border:1px solid var(--ink);border-radius:99px;padding:0 8px;margin:0 4px 4px 0}
+.price{font-weight:700}
+.slot{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid #c5ccd8}
+progress{width:100%;height:16px;accent-color:var(--ok)}
+progress.over{accent-color:var(--bad)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px}
+th,td{border:1px solid var(--ink);padding:6px 8px;text-align:left}
+td.best{background:var(--okbg);font-weight:700}
+
+/* Task 3 */
+.fields{border:2px solid var(--ink);border-radius:6px;padding:4px 12px 8px;margin:16px 0}
+legend{font-weight:700;padding:0 6px}
+.preview,.result{border-top:10px solid var(--hero)}
+.c-crimson{--hero:#c81d3a}.c-azure{--hero:#1d6fd8}.c-emerald{--hero:#14804a}.c-violet{--hero:#7a3fd1}.c-amber{--hero:#e69500}
+.skill-row{display:grid;grid-template-columns:84px 1fr 28px;gap:8px;align-items:center;margin:6px 0}
+meter{width:100%;height:14px}
+#summary{border:2px solid var(--bad);background:var(--badbg);padding:8px 12px;border-radius:6px}
+#result:focus{outline:none}

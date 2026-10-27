@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1 · Code Breaker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task1.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav><a href="index.html">Home</a><a href="task2.html">Task 2</a><a href="task3.html">Task 3</a></nav>
+    <h1>Code Breaker</h1>
+    <p>Crack the secret code. Every digit in it is different. A digit in the right place is a bull, a digit in the wrong place is a cow.</p>
+  </header>
+  <main>
+    <section id="game" class="card">
+      <p id="message" class="msg" role="status"></p>
+      <form id="guess-form" autocomplete="off">
+        <label for="guess">Your guess</label>
+        <input id="guess" type="text" inputmode="numeric">
+        <div class="btns">
+          <button id="guess-btn" type="submit">Guess</button>
+          <button id="restart" type="button" class="ghost">New game</button>
+        </div>
+      </form>
+      <p>Attempts left: <strong id="left"></strong></p>
+      <h2>Your guesses</h2>
+      <p id="empty" class="empty">No guesses yet.</p>
+      <ol id="history"></ol>
+    </section>
+  </main>
+</body>
+</html>

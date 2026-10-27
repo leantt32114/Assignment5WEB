@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 3 · Character Creator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task3.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav><a href="index.html">Home</a><a href="task1.html">Task 1</a><a href="task2.html">Task 2</a></nav>
+    <h1>Character Creator</h1>
+    <p>Fill in the form. The card on the right updates while you type, and every mistake is explained under its field.</p>
+  </header>
+  <main class="layout">
+    <form id="creator" class="card">
+      <h2>Create your hero</h2>
+      <p id="summary" class="msg error" role="alert" hidden></p>
+
+      <label for="hero-name">Name</label>
+      <input id="hero-name" type="text" required minlength="3" maxlength="16" pattern="[A-Za-z][A-Za-z ]*" autocomplete="off" aria-describedby="name-error">
+      <p id="name-error" class="msg error"></p>
+
+      <label for="hero-class">Class</label>
+      <select id="hero-class" required aria-describedby="class-error">
+        <option value="">Choose a class…</option>
+        <option value="warrior">Warrior</option>
+        <option value="mage">Mage</option>
+        <option value="rogue">Rogue</option>
+      </select>
+      <p id="class-error" class="msg error"></p>
+
+      <label for="hero-color">Color</label>
+      <select id="hero-color" required aria-describedby="color-error">
+        <option value="">Choose a color…</option>
+        <option value="crimson">Crimson</option>
+        <option value="azure">Azure</option>
+        <option value="emerald">Emerald</option>
+        <option value="violet">Violet</option>
+        <option value="amber">Amber</option>
+      </select>
+      <p id="color-error" class="msg error"></p>
+
+      <fieldset class="fields">
+        <legend>Skills: spend exactly 20 points, 1 to 10 each</legend>
+        <div class="row">
+          <div><label for="strength">Strength</label><input id="strength" type="number" min="1" max="10" step="1" value="5" required aria-describedby="skills-error"></div>
+          <div><label for="agility">Agility</label><input id="agility" type="number" min="1" max="10" step="1" value="5" required aria-describedby="skills-error"></div>
+          <div><label for="magic">Magic</label><input id="magic" type="number" min="1" max="10" step="1" value="5" required aria-describedby="skills-error"></div>
+          <div><label for="luck">Luck</label><input id="luck" type="number" min="1" max="10" step="1" value="5" required aria-describedby="skills-error"></div>
+        </div>
+        <p>Points left: <strong id="left">0</strong></p>
+        <p id="skills-error" class="msg error"></p>
+      </fieldset>
+
+      <button type="submit">Create character</button>
+    </form>
+
+    <aside>
+      <section id="preview" class="card preview">
+        <h2>Live preview</h2>
+        <h3 id="pv-name"></h3>
+        <p id="pv-class" class="muted"></p>
+        <div class="skill-row"><span>Strength</span><meter id="pv-strength" min="0" max="10" value="0"></meter><span id="pv-strength-n">0</span></div>
+        <div class="skill-row"><span>Agility</span><meter id="pv-agility" min="0" max="10" value="0"></meter><span id="pv-agility-n">0</span></div>
+        <div class="skill-row"><span>Magic</span><meter id="pv-magic" min="0" max="10" value="0"></meter><span id="pv-magic-n">0</span></div>
+        <div class="skill-row"><span>Luck</span><meter id="pv-luck" min="0" max="10" value="0"></meter><span id="pv-luck-n">0</span></div>
+      </section>
+      <section id="result" class="card result" tabindex="-1" hidden></section>
+    </aside>
+  </main>
+</body>
+</html>
